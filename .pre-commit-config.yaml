@@ -1,0 +1,30 @@
+repos:
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+    - id: isort
+      name: isort (python)
+      args: ["--line-length=100"]
+
+- repo: https://github.com/ambv/black
+  rev: 23.7.0
+  hooks:
+    - id: black
+      name: black (python3.11)
+      language_version: python3.11
+      args: ["--line-length=100"]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+  hooks:
+    - id: flake8
+      name: flake8 😁
+      args: ["--ignore=E402", "--max-line-length=100"]
+
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.74.1
+  hooks:
+    - id: terraform_fmt
+      name: terraform format
+    - id: terraform_validate
+      name: terraform validate
