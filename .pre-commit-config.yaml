@@ -3,28 +3,57 @@ repos:
   rev: 5.12.0
   hooks:
     - id: isort
-      name: isort (python)
+      name: isort (python) 🔍
       args: ["--line-length=100"]
 
 - repo: https://github.com/ambv/black
   rev: 23.7.0
   hooks:
     - id: black
-      name: black (python3.11)
+      name: black (python3.11) 🧐
       language_version: python3.11
-      args: ["--line-length=100"]
+      args:
+        - --line-length=100
+        - --diff
+        - --color
+        - --verbose
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.3.0
   hooks:
     - id: flake8
       name: flake8 😁
-      args: ["--ignore=E402", "--max-line-length=100"]
+      args:
+        - --ignore=E402
+        - --max-line-length=100
 
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.74.1
+  rev: v1.81.0
   hooks:
     - id: terraform_fmt
-      name: terraform format
+      name: terraform format 📖
     - id: terraform_validate
-      name: terraform validate
+      name: terraform validate 📝
+
+
+- repo: https://github.com/econchick/interrogate
+  rev: 1.5.0
+  hooks:
+    - id: interrogate
+      name: interrogate  🚓
+      args:
+        - -vv
+        - --fail-under=100
+        - --ignore-init-method
+        - --ignore-init-module
+        - --ignore-module
+
+- repo: https://github.com/pycqa/pydocstyle
+  rev: 6.1.1
+  hooks:
+    - id: pydocstyle
+      name: pydocstyle (Google Convention) 🌈
+      args:
+        - --verbose
+        - --convention=google
+        - --add-ignore=D100,D107,D104
