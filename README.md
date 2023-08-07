@@ -1,5 +1,7 @@
 # starter-kit
 
+[![interrogate](images/interrogate_badge.svg)](https://github.com/psf/black) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![imports-isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
 This repository is designed to help you manage your Python projects efficiently with `pyenv`, `Poetry`, `Makefile`, and `pre-commit`. Each tool plays a crucial role in Python development, from managing Python versions and dependencies to automating common tasks and enforcing code quality standards. This guide will walk you through the setup and usage of these tools to streamline your development workflow.
 
 ## Prerequisites
