@@ -4,6 +4,13 @@ import random
 class Calculator:
     """A basic calculator class with addition and multiplication operations."""
     def __init__(self):
+        """Initialize a Calculator object.
+
+        This constructor takes no arguments and initializes a new Calculator object.
+
+        Returns:
+            Calculator: A new Calculator object.
+        """
         pass
 
     def add(self, a, b):
