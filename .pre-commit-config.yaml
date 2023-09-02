@@ -6,8 +6,8 @@ repos:
       name: isort (python) 🔍
       args: ["--line-length=100"]
 
-- repo: https://github.com/ambv/black
-  rev: 23.7.0
+- repo: https://github.com/psf/black
+  rev: 23.3.0
   hooks:
     - id: black
       name: black (python3.11) 🧐
@@ -17,6 +17,7 @@ repos:
         - --diff
         - --color
         - --verbose
+        - --target-version=py311
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.3.0
@@ -32,9 +33,6 @@ repos:
   hooks:
     - id: terraform_fmt
       name: terraform format 📖
-    - id: terraform_validate
-      name: terraform validate 📝
-
 
 - repo: https://github.com/econchick/interrogate
   rev: 1.5.0
@@ -44,7 +42,6 @@ repos:
       args:
         - -vv
         - --fail-under=100
-        - --ignore-init-method
         - --ignore-init-module
         - --ignore-module
 
@@ -52,8 +49,9 @@ repos:
   rev: 6.1.1
   hooks:
     - id: pydocstyle
+      additional_dependencies: ["toml"]
       name: pydocstyle (Google Convention) 🌈
       args:
         - --verbose
         - --convention=google
-        - --add-ignore=D100,D107,D104
+        - --add-ignore=D100,D104
